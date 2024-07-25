@@ -8,9 +8,10 @@ Also, See the very useful [Getting Started](http://www.freertos.org/FreeRTOS-qui
 This library provides 2 FreeRTOS versions:
  * [9.x](http://www.freertos.org/FreeRTOS-V9.html)
  * [10.x](http://www.freertos.org/FreeRTOS-V10.html):
-   * [10.0.1](https://github.com/STMicroelectronics/stm32_mw_freertos/releases/tag/v10.0.1) 
+   * [10.0.1](https://github.com/STMicroelectronics/stm32_mw_freertos/releases/tag/v10.0.1)
    * [10.2.1](https://github.com/STMicroelectronics/stm32_mw_freertos/releases/tag/v10.2.1)
    * [10.3.1](https://github.com/STMicroelectronics/stm32_mw_freertos/releases/tag/v10.3.1)
+   * [10.5.1](https://github.com/STMicroelectronics/stm32_mw_freertos/releases/tag/v10.5.1)
 
 Each have been modified by ST (See st_readme.txt in FreeRTOS Source).
 
@@ -41,16 +42,18 @@ By default, the `heap_useNewlib.c` is used. It can be changed thanks a define in
  */
 ```
 
-Since v10.0.1, CMSIS-RTOSv2 can be used instead of default CMSIS-RTOS.
+> [!Note]
+>  Since v10.0.1, CMSIS-RTOSv2 can be used instead of default CMSIS-RTOS.
+>  `configUSE_CMSIS_RTOS_V2` has to be defined and set to `1` to use CMSIS-RTOSv2.
 
-`configUSE_CMSIS_RTOS_V2` has to be defined and set to `1` to use
-CMSIS-RTOSv2.
+> [!Warning]
+> Since v10.5.1, CMSIS-RTOSv2 only is supported. `configUSE_CMSIS_RTOS_V2` is useless.
+> Required STM32 core version higher than 2.8.1.
 
 
 ## Limitations
 
 * MPU: not supported.
-* No CMSIS-RTOSv2 support provided. It is provided as example.
 * On Cortex-M0 and Cortex-M0+, all IT are disabled between xTaskCreate() and vTaskStartScheduler().
   So it is not possible to use IT inbetween, like Serial.print() ...
   This is the reason why, in example "frLiyLayland", between xTaskCreate() and vTaskStartScheduler(),
@@ -122,3 +125,15 @@ CMSIS-RTOSv2.
 | [Nucleo H743ZI (Cortex-M7)](https://www.st.com/en/evaluation-tools/nucleo-h743zi.html) | PASSED | PASSED | PASSED | PASSED | PASSED |
 | [Nucleo L552ZE-Q (Cortex-M33)](https://www.st.com/en/evaluation-tools/nucleo-l552ze-q.html) | PASSED | PASSED | PASSED | PASSED | PASSED |
 | [Nucleo U575ZI-Q (Cortex-M33)](https://www.st.com/en/evaluation-tools/nucleo-u575zi-q.html) | PASSED | PASSED | PASSED | PASSED | PASSED |
+
+
+### STM32FreeRTOS v10.5.1
+| Board | Blinky | frBlink |
+| --- | :---: | :---: |
+| [Nucleo F091RC (Cortex-M0)](http://www.st.com/en/evaluation-tools/nucleo-f091rc.html) |  |  |
+| [Nucleo G071RB (Cortex-M0+)](http://www.st.com/en/evaluation-tools/nucleo-g071rb.html) |  |  |
+| [Nucleo F103RB (Cortex-M3)](http://www.st.com/en/evaluation-tools/nucleo-f103rb.html) |  |  |
+| [Nucleo L476RG (Cortex-M4)](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) |  |  |
+| [Nucleo H743ZI (Cortex-M7)](https://www.st.com/en/evaluation-tools/nucleo-h743zi.html) |  |  |
+| [Nucleo L552ZE-Q (Cortex-M33)](https://www.st.com/en/evaluation-tools/nucleo-l552ze-q.html) | PASSED | PASSED |
+| [Nucleo U575ZI-Q (Cortex-M33)](https://www.st.com/en/evaluation-tools/nucleo-u575zi-q.html) |  |  |

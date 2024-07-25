@@ -80,7 +80,6 @@ void vApplicationMallocFailedHook() {
 	function, because it is the responsibility of the idle task to clean up
 	memory allocated by the kernel to any task that has since been deleted. */
 void  __attribute__((weak)) vApplicationIdleHook( void ) {
-  void loop();
   loop();
 }
 #endif /* configUSE_IDLE_HOOK == 1 */

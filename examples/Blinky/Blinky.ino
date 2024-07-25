@@ -1,6 +1,6 @@
 /* --------------------------------------------------------------------------
  * Original code from:
- * https://github.com/ARM-software/CMSIS-FreeRTOS/tree/develop/CMSIS/RTOS2/FreeRTOS/Examples/Blinky
+ * https://github.com/ARM-software/CMSIS-FreeRTOS/tree/92f4016b20a13b3d8ddb9290b8430d0e0a7cb803/CMSIS/RTOS2/FreeRTOS/Examples/Blinky
  *
  * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
  *

@@ -5,9 +5,4 @@
  */
 #include "FreeRTOS.h"
 
-#if !defined(configUSE_CMSIS_RTOS_V2) || (configUSE_CMSIS_RTOS_V2 == 0)
-#include "../portable/CMSIS_RTOS/cmsis_os.c"
-#else
 #include "../portable/CMSIS_RTOS_V2/cmsis_os2.c"
-#endif
-
